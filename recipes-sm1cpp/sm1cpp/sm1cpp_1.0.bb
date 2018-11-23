@@ -21,7 +21,7 @@ COMPATIBLE_MACHINE = "nanopi-neo"
 
 inherit cmake
 
-FILES_${PN} = "${libdir}/*.a"
+FILES_${PN} += "${libdir}/*.a"
 FILES_${PN} += "${libdir}/*.so"
 FILES_SOLIBSDEV = ""
 INSANE_SKIP_${PN} += "dev-so"
