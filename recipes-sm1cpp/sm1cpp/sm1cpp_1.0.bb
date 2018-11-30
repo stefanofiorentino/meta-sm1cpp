@@ -22,9 +22,9 @@ COMPATIBLE_MACHINE = "nanopi-neo"
 inherit cmake
 
 FILES_${PN} += "${libdir}/*.a"
-FILES_${PN} += "${libdir}/*.so"
 FILES_SOLIBSDEV = ""
-INSANE_SKIP_${PN} += "dev-so"
+INSANE_SKIP_${PN} += "staticdev"
+
 
 do_install_append() {
         install -d ${D}${includedir}/udp/include
@@ -33,6 +33,7 @@ do_install_append() {
         install -m 0644 ${S}/termios/include/termios.h ${D}${includedir}/termios/include/termios.h
 }
 
+PARALLEL_MAKE = ""
+
 BBCLASSEXTEND += "native nativesdk"
 
-PARALLEL_MAKE = ""
